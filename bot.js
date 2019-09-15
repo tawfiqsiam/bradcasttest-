@@ -14,7 +14,7 @@ client.on("message", message => {
   message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
   m.send(`${argresult}\n ${m}`);
   })
-  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  عدد المستلمين `);
+  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  Reserved   `);
   message.delete();
   };
   });
@@ -34,7 +34,7 @@ client.on("message", message => {
     message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
    m.send(`${argresult}\n ${m}`);
   })
-   message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  عدد المستلمين `); 
+   message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  Reserved   `); 
    message.delete(); 
   };     
   });
@@ -47,7 +47,7 @@ message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 });
 
 client.on('ready',  () => {
-    console.log('تم تشغيل :Broadcast  ');
+    console.log('Running   :Broadcast  ');
     console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
     console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
     console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -76,14 +76,16 @@ m.sendMessage(args)
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
-         .setDescription(`**Help|هيلب
+         .setDescription(`**Help
 
-       $obc | لأرسال برود كاست للكل
+       $obc | Send a dm to all of your server members    
 
-       $bc  |  لأرسال برود كاست للأونلاين
+       $bc  |  Send a dm to the online members    
 
-       $adminbc | برودكاست عادي
+       $adminbc |  Bot admins command 
 
+       Server support 
+https://discord.gg/fHX5Q9M
        ** `)
    message.author.sendEmbed(embed)
    
